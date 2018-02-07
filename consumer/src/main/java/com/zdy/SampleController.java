@@ -22,4 +22,10 @@ public class SampleController {
         return demo.sayHello();
     }
 
+    @RequestMapping("/bak")
+    @ResponseBody
+    String homeBak() {
+        return demo.sayHelloBak();
+    }
+
 }
