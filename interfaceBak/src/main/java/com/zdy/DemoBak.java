@@ -3,11 +3,11 @@ package com.zdy;
 /**
  * @author zdy
  */
-public interface Demo {
+public interface DemoBak {
 
     /**
      * sayHello
      * @return
      */
-    String sayHello();
+    String sayHelloBak();
 }

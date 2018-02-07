@@ -10,4 +10,6 @@ public interface Demo {
      * @return
      */
     String sayHello();
+
+    String sayHelloBak();
 }
