@@ -11,7 +11,6 @@ import javax.annotation.Resource;
  * @author zdy
  */
 @Controller
-@EnableAutoConfiguration
 public class SampleController {
 
     @Resource
@@ -23,7 +22,4 @@ public class SampleController {
         return demo.sayHello();
     }
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(SampleController.class, args);
-    }
 }

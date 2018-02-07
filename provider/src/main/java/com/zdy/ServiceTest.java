@@ -1,9 +1,12 @@
 package com.zdy;
 
+import org.springframework.stereotype.Service;
+
 /**
  * @author zdy
  */
-public class Service implements Demo {
+@Service
+public class ServiceTest implements Demo {
     @Override
     public String sayHello() {
         return "zdy hello";
