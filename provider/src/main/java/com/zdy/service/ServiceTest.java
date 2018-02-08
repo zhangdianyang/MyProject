@@ -1,8 +1,13 @@
-package com.zdy;
+package com.zdy.service;
 
+import com.zdy.Demo;
+import com.zdy.DemoBak;
+import com.zdy.dao.UserDao;
+import com.zdy.entity.User;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author zdy
@@ -13,9 +18,13 @@ public class ServiceTest implements Demo {
     @Resource
     private DemoBak demoBak;
 
+    @Resource
+    private UserDao userDao;
+
     @Override
-    public String sayHello() {
-        return "zdy hello";
+    public List<User> sayHello() {
+        List<User> users = userDao.findUser();
+        return users;
     }
 
     @Override
