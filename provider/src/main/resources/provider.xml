@@ -9,5 +9,6 @@
     <dubbo:protocol name="dubbo" port="20880"/>
 
     <dubbo:service interface="com.zdy.Demo" ref="serviceTest"/>
-    <bean id="serviceTest" class="com.zdy.ServiceTest"/>
+
+    <dubbo:reference id="demoBak" interface="com.zdy.DemoBak"/>
 </beans>

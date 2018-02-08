@@ -19,7 +19,8 @@ public class ServiceTest implements Demo {
     }
 
     @Override
-    public String sayHelloBak(){
+    public String sayHelloBak() {
         return demoBak.sayHelloBak();
     }
+
 }
