@@ -12,6 +12,6 @@ import org.springframework.context.annotation.ImportResource;
 public class SpringApplicationProvider {
 
     public static void main(String[] args) throws Exception {
-        org.springframework.boot.SpringApplication.run(SpringApplicationProvider.class, args);
+        SpringApplication.run(SpringApplicationProvider.class, args);
     }
 }

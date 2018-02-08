@@ -1,5 +1,6 @@
 package com.zdy;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
@@ -12,6 +13,6 @@ import org.springframework.context.annotation.ImportResource;
 public class SpringApplicationProviderBak {
 
     public static void main(String[] args) throws Exception {
-        org.springframework.boot.SpringApplication.run(SpringApplicationProviderBak.class, args);
+        SpringApplication.run(SpringApplicationProviderBak.class, args);
     }
 }

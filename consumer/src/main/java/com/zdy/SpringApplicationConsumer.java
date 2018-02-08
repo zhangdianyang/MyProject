@@ -12,6 +12,6 @@ import org.springframework.context.annotation.ImportResource;
 public class SpringApplicationConsumer {
 
     public static void main(String[] args) throws Exception {
-        org.springframework.boot.SpringApplication.run(SpringApplicationConsumer.class, args);
+        SpringApplication.run(SpringApplicationConsumer.class, args);
     }
 }
