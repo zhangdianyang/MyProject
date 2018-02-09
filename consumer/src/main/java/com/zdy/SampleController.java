@@ -29,4 +29,10 @@ public class SampleController {
         return demo.sayHelloBak();
     }
 
+    @RequestMapping("/redis")
+    @ResponseBody
+    String homeRedis() {
+        return demo.getRedisValue();
+    }
+
 }

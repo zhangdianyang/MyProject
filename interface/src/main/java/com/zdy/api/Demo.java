@@ -20,4 +20,10 @@ public interface Demo {
      * @return
      */
     String sayHelloBak();
+
+    /**
+     * getRedisValue
+     * @return
+     */
+    String getRedisValue();
 }
