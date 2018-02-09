@@ -8,5 +8,5 @@
     <dubbo:registry address="zookeeper://192.168.60.237:2181"/>
     <dubbo:protocol name="dubbo" port="20881"/>
 
-    <dubbo:service interface="com.zdy.DemoBak" ref="serviceTestBak"/>
+    <dubbo:service interface="com.zdy.api.DemoBak" ref="serviceTestBak"/>
 </beans>

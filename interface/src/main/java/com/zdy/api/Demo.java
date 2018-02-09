@@ -1,4 +1,4 @@
-package com.zdy;
+package com.zdy.api;
 
 import com.zdy.entity.User;
 

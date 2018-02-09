@@ -1,8 +1,7 @@
 package com.zdy;
 
+import com.zdy.api.Demo;
 import com.zdy.entity.User;
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 

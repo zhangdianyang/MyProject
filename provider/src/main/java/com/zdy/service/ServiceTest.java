@@ -1,7 +1,7 @@
 package com.zdy.service;
 
-import com.zdy.Demo;
-import com.zdy.DemoBak;
+import com.zdy.api.Demo;
+import com.zdy.api.DemoBak;
 import com.zdy.dao.UserDao;
 import com.zdy.entity.User;
 import org.springframework.stereotype.Service;
