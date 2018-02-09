@@ -5,10 +5,12 @@ import com.zdy.api.DemoBak;
 import com.zdy.dao.UserDao;
 import com.zdy.entity.User;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.management.BadStringOperationException;
 import java.util.List;
 
 /**
@@ -18,10 +20,7 @@ import java.util.List;
 public class ServiceTest implements Demo {
 
     @Resource
-    private RedisTemplate<String,Object> redisTemplate;
-
-    @Resource
-    private ValueOperations<String,Object> valueOperations;
+    private RedisTemplate redisTemplate;
 
     @Resource
     private DemoBak demoBak;
@@ -42,8 +41,11 @@ public class ServiceTest implements Demo {
 
     @Override
     public String getRedisValue() {
-        valueOperations.set("zhang","dianyang");
-        String result = (String) valueOperations.get("zhang");
+        User user = new User();
+        user.setId(1);
+        user.setName("wang");
+
+        String result = (String) redisTemplate.opsForValue().get("zhang");
         return result;
     }
 
