@@ -44,7 +44,7 @@ public class ServiceTest implements Demo {
         User user = new User();
         user.setId(1);
         user.setName("wang");
-
+        redisTemplate.opsForValue().set("zhang","dianyang");
         String result = (String) redisTemplate.opsForValue().get("zhang");
         return result;
     }
