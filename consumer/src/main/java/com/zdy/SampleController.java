@@ -19,7 +19,7 @@ public class SampleController {
 
     @RequestMapping("/")
     @ResponseBody
-    List<User> home() {
+    List<User> home() throws Exception {
         return demo.sayHello();
     }
 

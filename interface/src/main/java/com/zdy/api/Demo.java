@@ -12,8 +12,9 @@ public interface Demo {
     /**
      * sayHello
      * @return
+     * @throws Exception
      */
-    List<User> sayHello();
+    List<User> sayHello() throws Exception;
 
     /**
      * sayHelloBak

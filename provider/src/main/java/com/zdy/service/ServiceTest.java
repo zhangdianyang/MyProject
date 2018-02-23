@@ -8,6 +8,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.management.BadStringOperationException;
@@ -28,9 +29,14 @@ public class ServiceTest implements Demo {
     @Resource
     private UserDao userDao;
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
-    public List<User> sayHello() {
+    public List<User> sayHello() throws Exception {
+        userDao.insertUser();
         List<User> users = userDao.findUser();
+        if(true){
+            throw new Exception("333");
+        }
         return users;
     }
 
