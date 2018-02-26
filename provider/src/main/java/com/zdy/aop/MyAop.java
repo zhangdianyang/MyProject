@@ -1,6 +1,7 @@
 package com.zdy.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -30,6 +31,12 @@ public class MyAop {
         long endTime = System.currentTimeMillis();
         logger.info("耗时="+(endTime-startTime)+"毫秒");
         return result;
+    }
+
+    @AfterThrowing(pointcut = "pointCutMethod()", throwing = "e")
+    public void afterThrowingService(Throwable e) throws Exception {
+        e.printStackTrace();
+        throw new Exception("服务器错误");
     }
 
 }
