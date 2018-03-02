@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author zdy
@@ -33,6 +34,13 @@ public class SampleController {
     @ResponseBody
     String homeRedis() {
         return demo.getRedisValue();
+    }
+
+    @RequestMapping("/async")
+    @ResponseBody
+    String homeAsync() throws ExecutionException, InterruptedException {
+        demo.Async();
+        return "ok";
     }
 
 }
