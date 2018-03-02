@@ -10,9 +10,7 @@ import org.springframework.context.annotation.ImportResource;
 /**
  * @author zdy
  */
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan
+@SpringBootApplication
 @ImportResource(value = {"classpath:consumer.xml"})
 public class SpringApplicationConsumer {
 

@@ -32,9 +32,9 @@ public class ServiceTest implements Demo {
     @Transactional(rollbackFor = Exception.class)
     @Override
     public List<User> sayHello() throws Exception {
-        userDao.insertUser();
+//        userDao.insertUser();
         List<User> users = userDao.findUser();
-        if(true){
+        if(false){
             throw new Exception("333");
         }
         return users;
