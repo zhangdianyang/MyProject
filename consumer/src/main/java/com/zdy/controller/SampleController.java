@@ -12,32 +12,28 @@ import java.util.concurrent.ExecutionException;
 /**
  * @author zdy
  */
-@Controller
+@RestController
 public class SampleController {
 
     @Resource
     private Demo demo;
 
     @RequestMapping("/")
-    @ResponseBody
     List<User> home() throws Exception {
         return demo.sayHello();
     }
 
     @RequestMapping("/bak")
-    @ResponseBody
     String homeBak() {
         return demo.sayHelloBak();
     }
 
     @RequestMapping("/redis")
-    @ResponseBody
     String homeRedis() {
         return demo.getRedisValue();
     }
 
     @RequestMapping("/async")
-    @ResponseBody
     String homeAsync() throws ExecutionException, InterruptedException {
         demo.Async();
         return "ok";
