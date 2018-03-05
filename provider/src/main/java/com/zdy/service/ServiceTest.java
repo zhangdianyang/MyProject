@@ -36,7 +36,7 @@ public class ServiceTest implements Demo {
     public List<User> sayHello() throws Exception {
 //        userDao.insertUser();
         List<User> users = userDao.findUser();
-        if(false){
+        if(true){
             throw new Exception("333");
         }
         return users;
