@@ -8,6 +8,8 @@ import org.apache.log4j.net.SocketServer;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 
 /**
  * @author zdy
@@ -38,29 +40,55 @@ public class Test {
 //        in.close();
 //        System.out.println(sb.toString());
 
+        FileInputStream fileInputStream = new FileInputStream("./consumer/src/main/resources/abc.txt");
+        try {
+            FileChannel channel = fileInputStream.getChannel();
+            ByteBuffer buf = ByteBuffer.allocate(10240);
+            int bytesRead = channel.read(buf);
+            while (bytesRead != -1){
+                buf.flip();
+                while(buf.hasRemaining())
+                {
+                    System.out.print((char)buf.get());
+                }
+                buf.compact();
+                bytesRead = channel.read(buf);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(fileInputStream != null){
+                    fileInputStream.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
 //        File file = new File("./consumer/src/main/resources");
 //        String[] list = file.list();
 //        for (String s1 : list) {
 //            System.out.println(s1);
 //        }
 
-        ServerSocket server = new ServerSocket(5555);
-        Socket socket = server.accept();
-        InputStream inputStream = socket.getInputStream();
-        byte [] bytes = new byte[1024];
-        int i ;
-        StringBuilder sb = new StringBuilder();
-        while((i = inputStream.read(bytes)) != -1){
-            sb.append(new String(bytes,0,i,"UTF-8"));
-        }
-        System.out.println(sb);
-        OutputStream outputStream = socket.getOutputStream();
-        String msg = "我收到了";
-        outputStream.write(msg.getBytes("UTF-8"));
-        outputStream.close();
-        inputStream.close();
-        socket.close();
-        server.close();
+//        ServerSocket server = new ServerSocket(5555);
+//        Socket socket = server.accept();
+//        InputStream inputStream = socket.getInputStream();
+//        byte [] bytes = new byte[1024];
+//        int i ;
+//        StringBuilder sb = new StringBuilder();
+//        while((i = inputStream.read(bytes)) != -1){
+//            sb.append(new String(bytes,0,i,"UTF-8"));
+//        }
+//        System.out.println(sb);
+//        OutputStream outputStream = socket.getOutputStream();
+//        String msg = "我收到了";
+//        outputStream.write(msg.getBytes("UTF-8"));
+//        outputStream.close();
+//        inputStream.close();
+//        socket.close();
+//        server.close();
     }
 
 
