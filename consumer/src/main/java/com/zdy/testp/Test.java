@@ -9,7 +9,9 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.charset.Charset;
 
 /**
  * @author zdy
@@ -49,7 +51,9 @@ public class Test {
                 buf.flip();
                 while(buf.hasRemaining())
                 {
-                    System.out.print((char)buf.get());
+                    Charset charset = Charset.defaultCharset();
+                    CharBuffer decode = charset.decode(buf);
+                    System.out.println(decode.toString());
                 }
                 buf.compact();
                 bytesRead = channel.read(buf);
