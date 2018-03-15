@@ -42,34 +42,34 @@ public class Test {
 //        in.close();
 //        System.out.println(sb.toString());
 
-        FileInputStream fileInputStream = new FileInputStream("./consumer/src/main/resources/abc.txt");
-        try {
-            FileChannel channel = fileInputStream.getChannel();
-            ByteBuffer buf = ByteBuffer.allocate(10240);
-            int bytesRead = channel.read(buf);
-            while (bytesRead != -1){
-                buf.flip();
-                while(buf.hasRemaining())
-                {
-                    Charset charset = Charset.defaultCharset();
-                    CharBuffer decode = charset.decode(buf);
-                    System.out.println(decode.toString());
-                }
-                buf.compact();
-                bytesRead = channel.read(buf);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if(fileInputStream != null){
-                    fileInputStream.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+//        FileOutputStream fileOutputStream = new FileOutputStream("./consumer/src/main/resources/abc.txt");
+//        try {
+//            FileChannel outChannel = fileOutputStream.getChannel();
+//            ByteBuffer buf = ByteBuffer.allocate(10240);
+//            String msg = "nihaopaaa啊";
+//            buf.put(msg.getBytes("UTF-8"));
+//            buf.flip();
+//            outChannel.write(buf);
+//            outChannel.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            fileOutputStream.close();
+//        }
 
+        FileInputStream fileInputStream = new FileInputStream("./consumer/src/main/resources/abc.txt");
+        FileChannel channel = fileInputStream.getChannel();
+        ByteBuffer buf = ByteBuffer.allocate(1024);
+        channel.read(buf);
+        Charset charset = Charset.defaultCharset();
+        buf.flip();
+        while (buf.hasRemaining()){
+            CharBuffer decode = charset.decode(buf);
+            System.out.println(decode.toString());
+        }
+        buf.clear();
+        channel.close();
+        fileInputStream.close();
 //        File file = new File("./consumer/src/main/resources");
 //        String[] list = file.list();
 //        for (String s1 : list) {
