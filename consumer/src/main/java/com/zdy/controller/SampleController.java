@@ -59,7 +59,8 @@ public class SampleController {
     @MessageMapping("/sendTest")
     @SendTo("/topic/subscribeTest")
     public String sendDemo(String message) {
-        message = "nihao";
+        System.out.println(message);
+        message = "消息发送成功";
         return message;
     }
 
@@ -73,7 +74,7 @@ public class SampleController {
      */
     @RequestMapping("/tuisong")
     public void templateTest() {
-        messagingTemplate.convertAndSend("/topic/subscribeTest", "服务器主动推的数据");
+        messagingTemplate.convertAndSend("/topic/subscribeTest", "在的！亲");
     }
 
 
