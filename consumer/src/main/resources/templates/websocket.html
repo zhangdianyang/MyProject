@@ -29,16 +29,16 @@ Welcome<br/><input id="text" type="text" />
     // 向服务器发起websocket连接并发送CONNECT帧
     stompClient.connect(
         {
-            name:"test"
+            login:"test"
         },
         function connectCallback(frame) {
             // 连接成功时（服务器响应 CONNECTED 帧）的回调方法
             setMessageInnerHTML("连接成功");
-            stompClient.subscribe('/app/subscribeTest', function (response) {
-                // setMessageInnerHTML("已成功订阅/app/subscribeTest");
-                var returnData = response.body;
-                setMessageInnerHTML("/app/subscribeTest 你接收到的消息为:" + returnData);
-            });
+            // stompClient.subscribe('/app/subscribeTest', function (response) {
+            //     // setMessageInnerHTML("已成功订阅/app/subscribeTest");
+            //     var returnData = response.body;
+            //     setMessageInnerHTML("/app/subscribeTest 你接收到的消息为:" + returnData);
+            // });
             // subscribe1();
             subscribe2();
         },
