@@ -32,7 +32,7 @@ public class Test {
         return father;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, IllegalAccessException, InstantiationException {
 //        DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream("./consumer/src/main/resources/abc.txt")));
 //        String s;
 //        StringBuilder sb = new StringBuilder();
@@ -57,19 +57,26 @@ public class Test {
 //            fileOutputStream.close();
 //        }
 
-        FileInputStream fileInputStream = new FileInputStream("./consumer/src/main/resources/abc.txt");
-        FileChannel channel = fileInputStream.getChannel();
-        ByteBuffer buf = ByteBuffer.allocate(1024);
-        channel.read(buf);
-        Charset charset = Charset.defaultCharset();
-        buf.flip();
-        while (buf.hasRemaining()){
-            CharBuffer decode = charset.decode(buf);
-            System.out.println(decode.toString());
+//        FileInputStream fileInputStream = new FileInputStream("./consumer/src/main/resources/abc.txt");
+//        FileChannel channel = fileInputStream.getChannel();
+//        ByteBuffer buf = ByteBuffer.allocate(1024);
+//        channel.read(buf);
+//        Charset charset = Charset.defaultCharset();
+//        buf.flip();
+//        while (buf.hasRemaining()){
+//            CharBuffer decode = charset.decode(buf);
+//            System.out.println(decode.toString());
+//        }
+//        buf.clear();
+//        channel.close();
+//        fileInputStream.close();
+        try {
+            Class<NioServer> nio = (Class<NioServer>) Class.forName("NioServer");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
-        buf.clear();
-        channel.close();
-        fileInputStream.close();
+
+
 //        File file = new File("./consumer/src/main/resources");
 //        String[] list = file.list();
 //        for (String s1 : list) {
