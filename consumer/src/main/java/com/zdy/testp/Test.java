@@ -70,18 +70,19 @@ public class Test {
 //        buf.clear();
 //        channel.close();
 //        fileInputStream.close();
-        try {
-            Class<NioServer> nio = (Class<NioServer>) Class.forName("NioServer");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
+//        try {
+//            Class<NioServer> nio = (Class<NioServer>) Class.forName("NioServer");
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
 //        File file = new File("./consumer/src/main/resources");
 //        String[] list = file.list();
 //        for (String s1 : list) {
 //            System.out.println(s1);
 //        }
+
+
 
 //        ServerSocket server = new ServerSocket(5555);
 //        Socket socket = server.accept();
