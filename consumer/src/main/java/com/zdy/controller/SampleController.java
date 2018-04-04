@@ -72,7 +72,6 @@ public class SampleController {
     public String sendToUserDemo(String message) throws Exception {
         System.out.println(message);
         message = "消息发送成功User";
-
         return message;
     }
 
