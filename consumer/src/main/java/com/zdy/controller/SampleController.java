@@ -40,7 +40,6 @@ public class SampleController {
 
     @RequestMapping("/")
     List<User> home() throws Exception {
-        System.out.println("2222");
         return demo.sayHello();
     }
 
