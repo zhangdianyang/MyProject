@@ -64,6 +64,7 @@ public class SampleController {
     public String sendDemo(String message) {
         System.out.println(message);
 //        message = "消息发送成功";
+
         return message;
     }
 
