@@ -7,5 +7,5 @@
     <dubbo:application name="consumer"/>
     <dubbo:registry address="zookeeper://localhost:2181"/>
 
-    <dubbo:reference id="serviceDemo" interface="com.zdy.api.Demo"/>
+    <dubbo:reference id="serviceDemo" interface="com.zdy.api.Demo" version="1.0.0"/>
 </beans>
