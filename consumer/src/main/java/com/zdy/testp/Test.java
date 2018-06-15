@@ -1,6 +1,7 @@
 package com.zdy.testp;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import jdk.internal.util.xml.impl.Input;
 import org.apache.coyote.http11.filters.BufferedInputFilter;
 import org.apache.log4j.net.SocketServer;
@@ -12,6 +13,9 @@ import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author zdy
@@ -101,7 +105,14 @@ public class Test {
 //        inputStream.close();
 //        socket.close();
 //        server.close();
+            List<String> list = new ArrayList();
+            list.add("zhang");
+            list.add("dian");
+            list.add("yang");
+            Collections.sort(list);
+            for (String o : list) {
+                System.out.println(o);
+            }
     }
-
 
 }
