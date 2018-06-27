@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @author zdy
  */
-@FeignClient(value = "PROVIDER")
+@FeignClient(value = "PROVIDER",fallback = Exception.class)
 public interface SayHiInterface {
 
     /**

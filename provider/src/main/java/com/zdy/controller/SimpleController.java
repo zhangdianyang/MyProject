@@ -13,6 +13,6 @@ public class SimpleController {
 
     @RequestMapping(value = "/hi")
     public String hi(@RequestParam String name){
-        return "provider say hi 2 "+name;
+        return "provider say hi 1 "+name;
     }
 }
