@@ -2,6 +2,8 @@ package com.zdy.controller;
 
 import com.zdy.api.Demo;
 import com.zdy.entity.User;
+import com.zdy.service.HelloService;
+import com.zdy.serviceinterface.SayHiInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ConditionalOnEnabledResourceChain;
 import org.springframework.messaging.handler.annotation.MessageExceptionHandler;
@@ -26,8 +28,14 @@ import java.util.concurrent.ExecutionException;
 @RestController
 public class SampleController {
 
+//    @Resource
+//    private Demo demo;
+
     @Resource
-    private Demo demo;
+    private SayHiInterface sayHiInterface;
+
+    @Resource
+    private HelloService helloService;
 
     @Resource
     private WebSocketController webSocketController;
@@ -38,26 +46,26 @@ public class SampleController {
     @Resource
     private SimpMessagingTemplate messagingTemplate;
 
-    @RequestMapping("/")
-    List<User> home() throws Exception {
-        return demo.sayHello();
-    }
-
-    @RequestMapping("/bak")
-    String homeBak() {
-        return demo.sayHelloBak();
-    }
-
-    @RequestMapping("/redis")
-    String homeRedis() {
-        return demo.getRedisValue();
-    }
-
-    @RequestMapping("/async")
-    String homeAsync() throws ExecutionException, InterruptedException {
-        demo.Async();
-        return "ok";
-    }
+//    @RequestMapping("/")
+//    List<User> home() throws Exception {
+//        return demo.sayHello();
+//    }
+//
+//    @RequestMapping("/bak")
+//    String homeBak() {
+//        return demo.sayHelloBak();
+//    }
+//
+//    @RequestMapping("/redis")
+//    String homeRedis() {
+//        return demo.getRedisValue();
+//    }
+//
+//    @RequestMapping("/async")
+//    String homeAsync() throws ExecutionException, InterruptedException {
+//        demo.Async();
+//        return "ok";
+//    }
 
     @MessageMapping("/sendTest")
     @SendTo("/topic/subscribeTest")
@@ -99,5 +107,13 @@ public class SampleController {
         messagingTemplate.convertAndSendToUser("test", "/queue/sendTest", "在的！亲");
     }
 
+    @RequestMapping(value = "/hi")
+    public String hi(@RequestParam String name){
+        return helloService.hiService(name);
+    }
 
+    @RequestMapping(value = "/hiFeign")
+    public String hiFeign(@RequestParam String name){
+        return sayHiInterface.sayHiFromFeign(name);
+    }
 }

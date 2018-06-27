@@ -15,6 +15,7 @@
         <module>providerBak</module>
         <module>interfaceBak</module>
         <module>util</module>
+        <module>SpirngCloudServer</module>
     </modules>
 
 

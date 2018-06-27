@@ -22,8 +22,8 @@ public class ServiceTest implements Demo {
     @Resource
     private RedisTemplate redisTemplate;
 
-    @Resource
-    private DemoBak demoBak;
+//    @Resource
+//    private DemoBak demoBak;
 
     @Resource
     private AsyncDemo asyncDemo;
@@ -44,7 +44,8 @@ public class ServiceTest implements Demo {
 
     @Override
     public String sayHelloBak() {
-        return demoBak.sayHelloBak();
+//        return demoBak.sayHelloBak();
+        return "sayHelloBak";
     }
 
     @Override
