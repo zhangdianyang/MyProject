@@ -1,5 +1,6 @@
 package com.zdy.serviceinterface;
 
+import com.zdy.service.SayHiInterfaceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @author zdy
  */
-@FeignClient(value = "PROVIDER",fallback = Exception.class)
+@FeignClient(value = "PROVIDER",fallback = SayHiInterfaceImpl.class)
 public interface SayHiInterface {
 
     /**
