@@ -12,7 +12,6 @@ spring:
           password: zdy1991227
       label: master
       enabled: true
-      name: ${spring.application.name},zdy
   application:
     name: config-server
 
