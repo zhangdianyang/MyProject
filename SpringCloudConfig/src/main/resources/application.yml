@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8762
 
 spring:
   cloud:
@@ -7,10 +7,11 @@ spring:
       server:
         git:
           uri: https://github.com/zhangdianyang/MyProject.git
-          search-paths: /**
+          search-paths: /SpringCloudConfig/config
           username: zhangdianyang
           password: zdy1991227
       label: master
+      enabled: true
   application:
     name: config-server
 
