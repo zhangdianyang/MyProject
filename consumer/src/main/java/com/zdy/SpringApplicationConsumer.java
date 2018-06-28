@@ -23,7 +23,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @ImportResource(value = {"classpath:consumer.xml"})
-//@EnableEurekaClient
+@EnableEurekaClient
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableHystrix
