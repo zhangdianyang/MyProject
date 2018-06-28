@@ -19,3 +19,6 @@ spring:
           username: zhangdianyang
           password: zdy1991227
       label: master
+  application:
+    name: config-server
+

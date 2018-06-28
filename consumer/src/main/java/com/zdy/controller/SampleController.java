@@ -5,6 +5,7 @@ import com.zdy.entity.User;
 import com.zdy.service.HelloService;
 import com.zdy.serviceinterface.SayHiInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.web.ConditionalOnEnabledResourceChain;
 import org.springframework.messaging.handler.annotation.MessageExceptionHandler;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -45,6 +46,9 @@ public class SampleController {
 
     @Resource
     private SimpMessagingTemplate messagingTemplate;
+
+    @Value("${foo}")
+    private String foo;
 
 //    @RequestMapping("/")
 //    List<User> home() throws Exception {
@@ -115,5 +119,10 @@ public class SampleController {
     @RequestMapping(value = "/hiFeign")
     public String hiFeign(@RequestParam String name){
         return sayHiInterface.sayHiFromFeign(name);
+    }
+
+    @RequestMapping(value = "/foo")
+    public String foo(){
+        return foo;
     }
 }
