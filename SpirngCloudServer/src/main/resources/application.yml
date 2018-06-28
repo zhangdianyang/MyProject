@@ -14,8 +14,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/zhangdianyang/MyProject/tree/master/SpirngCloudServer/src/main/resources
+          uri: https://github.com/SpirngCloudServer/resources
           search-paths: respo
-          username: 460187922@qq.com
+          username: zhangdianyang
           password: zdy1991227
       label: master
