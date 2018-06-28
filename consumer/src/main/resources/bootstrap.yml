@@ -4,7 +4,7 @@ spring:
     uri: http://localhost:8762/
     label: master
     profile: dev
-    name: "${spring.application.name},zdy,application"
+    name: "${spring.application.name},application}"
   application:
     name: consumer
 
