@@ -14,8 +14,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/SpirngCloudServer/resources
-          search-paths: respo
+          uri: https://github.com/zhangdianyang/MyProject.git
+          search-paths: SpringCloudServer/config
           username: zhangdianyang
           password: zdy1991227
       label: master
