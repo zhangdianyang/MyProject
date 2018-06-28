@@ -7,7 +7,7 @@ spring:
       server:
         git:
           uri: https://github.com/zhangdianyang/MyProject.git
-          search-paths: /SpringCloudConfig/config
+          search-paths: '{application}'
           username: zhangdianyang
           password: zdy1991227
       label: master
