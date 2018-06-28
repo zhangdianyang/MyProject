@@ -47,7 +47,7 @@ public class SampleController {
     @Resource
     private SimpMessagingTemplate messagingTemplate;
 
-    @Value("${zdy}")
+    @Value("${foo}")
     private String foo;
 
 //    @RequestMapping("/")
