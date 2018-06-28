@@ -9,16 +9,3 @@ eureka:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
-spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/zhangdianyang/MyProject.git
-          search-paths: SpringCloudServer/config
-          username: zhangdianyang
-          password: zdy1991227
-      label: master
-  application:
-    name: config-server
-

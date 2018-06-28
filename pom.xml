@@ -16,6 +16,7 @@
         <module>interfaceBak</module>
         <module>util</module>
         <module>SpirngCloudServer</module>
+        <module>SpringCloudConfig</module>
     </modules>
 
 
