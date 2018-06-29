@@ -7,6 +7,7 @@ import com.zdy.serviceinterface.SayHiInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.web.ConditionalOnEnabledResourceChain;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.messaging.handler.annotation.MessageExceptionHandler;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -27,6 +28,7 @@ import java.util.concurrent.ExecutionException;
  * @author zdy
  */
 @RestController
+@RefreshScope
 public class SampleController {
 
 //    @Resource
