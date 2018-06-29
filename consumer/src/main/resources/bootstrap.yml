@@ -4,12 +4,9 @@ spring:
     uri: http://localhost:8762/
     label: master
     profile: dev
-    name: "${spring.application.name},application}"
+    name: "${spring.application.name},application,zdy"
   application:
     name: consumer
-management:
-  security:
-    enabled: false
 
 
 
