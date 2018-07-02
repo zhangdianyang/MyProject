@@ -7,4 +7,6 @@ spring:
     name: "${spring.application.name},application,zdy"
   application:
     name: consumer
+server:
+  port: 8004
 
