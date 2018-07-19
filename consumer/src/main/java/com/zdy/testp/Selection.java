@@ -40,7 +40,12 @@ public class Selection {
      * @return
      */
     public int[] insertSort(int [] notSort){
+        for(int i = 1; i < notSort.length; i++){
+            int tempOne = notSort[i];
+            for(int j = i-1; j > 0; j--){
 
+            }
+        }
         return notSort;
     }
 
